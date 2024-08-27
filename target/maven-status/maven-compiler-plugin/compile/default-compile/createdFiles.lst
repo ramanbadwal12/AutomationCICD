@@ -1,0 +1,11 @@
+SGS/SportsGearSwag/pageobjects/ProuctCatalouge.class
+SGS/SportsGearSwag/pageobjects/AdditionalAccessories.class
+SGS/SportsGearSwag/pageobjects/EditCartDeatils.class
+SGS/SportsGearSwag/pageobjects/CheckoutPayPal.class
+SGS/SportsGearSwag/pageobjects/ForgotPassword.class
+SGS/SportsGearSwag/pageobjects/LandingPage.class
+SGS/Resources/ExtentReporterNG.class
+SGS/SportsGearSwag/pageobjects/SignupAccount.class
+SGS/SportsGearSwag/pageobjects/ArtWork.class
+SGS/AbstractComponents/AbstractComponent.class
+SGS/SportsGearSwag/pageobjects/CheckoutAnotherMethods.class
