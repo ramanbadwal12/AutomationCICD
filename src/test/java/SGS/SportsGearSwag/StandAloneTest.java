@@ -16,6 +16,8 @@ public class StandAloneTest {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		//Here we invoke the browser
+
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
