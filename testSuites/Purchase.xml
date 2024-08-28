@@ -3,7 +3,8 @@
 <suite name="Suite">
 
 <listeners>
-<listener class-name="SGS.TestComponent.Listeners"></listener>
+<listener class-name="SGS.TestComponent.Listeners">
+</listener>
 </listeners>
 
   <test thread-count="5" name="SubMit Order Test">

@@ -14,7 +14,6 @@ public class ArtWork {
 		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 	
 	

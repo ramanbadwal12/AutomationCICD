@@ -18,6 +18,7 @@ import SGS.SportsGearSwag.pageobjects.AdditionalAccessories;
 import SGS.SportsGearSwag.pageobjects.ArtWork;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
+import SGS.SportsGearSwag.pageobjects.VerifySummary;
 import SGS.TestComponent.BaseTest;
 import SGS.TestComponent.Retry;
 
@@ -53,7 +54,6 @@ import SGS.TestComponent.Retry;
 		Thread.sleep(1000);
 		
 	
-		
 //		#Customize your design
 		
 		productCatalouge.chooseStyle();
@@ -129,6 +129,9 @@ import SGS.TestComponent.Retry;
 		CustomArtworkDesign.ArtWorkDesign();
 		Thread.sleep(6000);
 		js.executeScript("window.scrollBy(0,2400)");
+		
+		VerifySummary VerifyTotalAmounts = new VerifySummary(driver);
+		VerifyTotalAmounts.summaryCalacualtions();
 
 //		#Update the Cart With new Changes
 		Thread.sleep(4000);
@@ -136,7 +139,7 @@ import SGS.TestComponent.Retry;
 		Thread.sleep(4000);
 		String ExpectedTitleOnCartPage = "SHOPPING CART";
 		AssertJUnit.assertEquals(ExpectedTitleOnCartPage, cartText);
-		System.out.println("Changes are done and landed on cartpage");
+		System.out.println("customizations are done and landed on cartpage");
 		
 		
 

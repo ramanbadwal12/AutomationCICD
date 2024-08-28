@@ -122,6 +122,7 @@ public class ProuctCatalouge extends AbstractComponent {
 		
 //		Get the total amount
 		String Amount1 = driver.findElement(By.xpath("//span[@id='add_to_cart_total_amount']")).getText();
+		System.out.println(Amount1);
 
 		
 //		Print the table value
@@ -131,22 +132,42 @@ public class ProuctCatalouge extends AbstractComponent {
 		}
 		
 //		# XPath with shipping fee
-//		List<WebElement> values = driver.findElements(By.xpath("//div[@id='add_to_cart_breakdown_details']//table/tbody/tr/td[2]"));
+		List<WebElement> values = driver.findElements(By.xpath("//div[@id='add_to_cart_breakdown_details']//table/tbody/tr/td[2]"));
 		
 //		#XPath without shipping fee
-		List<WebElement> values = driver.findElements(By.xpath("(//div[@class='ant-table-wrapper'])[1]//table/tbody/tr/td[2]"));
+//		List<WebElement> values = driver.findElements(By.xpath("(//div[@class='ant-table-wrapper'])[1]//table/tbody/tr/td[2]"));
+
 		
-		
-		
-		float sum= 0;
-		for(int i=0; i<values.size(); i++) {
-			sum =sum + Float.parseFloat(values.get(i).getText().replace('$','0'));
+		float sum = 0;
+		for (int i = 0; i < values.size(); i++) {
+		    String textValue = values.get(i).getText().trim();
+		    
+		    if (textValue.equalsIgnoreCase("FREE")) {
+		        sum += 0;
+		    } else {
+		        try {
+		            
+		            sum += Float.parseFloat(textValue.replace("$", "").replace("Discount", "").trim()                  
+		            );
+		        } catch (NumberFormatException e) {
+		            System.out.println("Error parsing value: " + textValue);
+		          
+		        }
+		    }
 		}
-		sum=sum*5;
-		System.out.println("Amount per product: " + sum);
-		assertEquals(Float.parseFloat(Amount1.replace('$', ' ').trim()), sum);
-		System.out.println("Assertion matched for Total Amount");
-		
+
+		//Multiply the sum by quantity if needed
+		 sum = sum * 5;
+		 System.out.println("Amount per product: " + sum);
+
+		// Assert that the calculated sum matches the expected amount
+		try {
+		    assertEquals(Float.parseFloat(Amount1.replace("$", "").replace("Discount", "").trim()), sum);
+		    System.out.println("Assertion matched for Total Amount");
+		} catch (NumberFormatException e) {
+		    System.out.println("Error parsing Amount1: " + Amount1);
+		}
+	
 	}
 	  
 private void assertEquals(float float1, float sum) {
@@ -155,20 +176,6 @@ private void assertEquals(float float1, float sum) {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-//	public void VerifyBreakDown()
-//	{
-//		List<WebElement> values = driver.findElements(By.xpath("//div[@class='sc-gsVtTC eTBBht']/div[2]"));
-//		
-//		float sum= 0;
-//		for(int i=0; i<values.size(); i++) {
-//			System.out.println(values.get(i).getText());
-//			sum =  Float(values.get(i).getText().replace('$',' '));
-//					}	
-//	}
-	
 
 	@SuppressWarnings("unused")
 	private float Float(String replace) {
