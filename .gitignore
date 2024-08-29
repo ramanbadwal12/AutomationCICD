@@ -2,7 +2,7 @@
 .classpath
 .project
 .settings/
-
+test-output
 # Maven specific files
 target/
 pom.xml.tag
