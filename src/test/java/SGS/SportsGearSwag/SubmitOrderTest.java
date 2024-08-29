@@ -16,7 +16,9 @@ import org.testng.annotations.Test;
 import SGS.AbstractComponents.AbstractComponent;
 import SGS.SportsGearSwag.pageobjects.AdditionalAccessories;
 import SGS.SportsGearSwag.pageobjects.ArtWork;
+import SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
+import SGS.SportsGearSwag.pageobjects.ExpressCheckoutPayPal;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
 import SGS.SportsGearSwag.pageobjects.ShippingDates;
 import SGS.SportsGearSwag.pageobjects.VerifySummary;
@@ -101,7 +103,7 @@ import SGS.TestComponent.Retry;
 		Thread.sleep(2000);
 		EditCartdetail.ChangeCustomizations();
 		System.out.println("All the customizations are done");
-		
+//		
 //		#Add Accessories
 		AdditionalAccessories ExtraAccessories = new AdditionalAccessories(driver);
 		ExtraAccessories.Accessories();
@@ -128,10 +130,23 @@ import SGS.TestComponent.Retry;
 		AssertJUnit.assertEquals(ExpectedTitleOnCartPage, cartText);
 		System.out.println("customizations are done and landed on cartpage");
 		
+//		#Express Checkout
+		ExpressCheckoutPayPal ExpressPay = new ExpressCheckoutPayPal(driver);
+		Thread.sleep(2000); ExpressPay.checkoutPaypal();
+		ExpressPay.switchToWindow();
+		ExpressPay.makePayment("jassi@gmail.com", "raman");
+		
+//		#Manual Checkout
+		CheckoutAnotherMethods ChooseMethods = new CheckoutAnotherMethods(driver);
+		ChooseMethods.CheckoutRemainMethods();
+		ChooseMethods.checkoutAnotherMethods("Ramanpreet", "Test order", "104 new york", "9501127112", "ramanpreet.singh@geeky.dev");
+		ChooseMethods.selectPaymentMethod();
+
 		
 //		#Close the browser
 		AbstractComponent abstractComponent = new AbstractComponent(driver);
 		abstractComponent.closeBrowser();
 
-	}}
+	}
+}
 

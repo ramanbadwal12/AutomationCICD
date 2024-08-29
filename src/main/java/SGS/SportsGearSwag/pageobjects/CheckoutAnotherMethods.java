@@ -1,7 +1,7 @@
 package SGS.SportsGearSwag.pageobjects;
 
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,34 +43,37 @@ public class CheckoutAnotherMethods {
 	
 	
 //	#Select Payment Method
- 
-	
 	@FindBy(xpath= "(//input[@id='checkout_paymentMethod_7'])[1]")
 	WebElement SelectMethod;
 	
 //	#Click on reCAPTHA and submit button
 	
-	@FindBy(xpath= ".recaptcha-checkbox-border")
+	@FindBy(xpath= "//iframe[@title='reCAPTCHA']")
 	WebElement reCAPTHA;
 	@FindBy(xpath="//button[@id='checkout_submit']")
 	WebElement SubmitOrder;
 
 //	#checkout Button
-	public void CheckoutRemainMethods() {
+	public void CheckoutRemainMethods() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1200)");
+		Thread.sleep(2000);
 		checkoutAnother.click();
 	}
 	
 	
 	public void checkoutAnotherMethods(String Firstname, String Lastname, String Address, String Phonenumber, String Shippingemail) throws InterruptedException {
 		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)");
 		Thread.sleep(1000);
-
 		UserFirstName.sendKeys(Firstname);
 		userLastName.sendKeys(Lastname);
 		phoneNumber.sendKeys(Phonenumber);
 		shippingEmail.sendKeys(Shippingemail);
+		Thread.sleep(2000);
 		shippingAddress.sendKeys(Address);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		shippingAddress.sendKeys(Keys.DOWN);
 		Thread.sleep(2000);
 		shippingAddress.sendKeys(Keys.ENTER);
@@ -80,19 +83,16 @@ public class CheckoutAnotherMethods {
 	}
 	
 //	#Select Payment Method
-	
 	public void selectPaymentMethod() throws InterruptedException {
 		
-		
+		Thread.sleep(2000); JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,800)");
+		Thread.sleep(2000);
 		SelectMethod.click();
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='reCAPTCHA']")));
 		reCAPTHA.click();
-		Thread.sleep(5000);
-		SubmitOrder.click();
-		
-		
-		
+		Thread.sleep(20000);
+//		SubmitOrder.click();
+			
 	}
-
 }
 
