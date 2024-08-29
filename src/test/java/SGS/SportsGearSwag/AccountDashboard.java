@@ -1,6 +1,5 @@
 package SGS.SportsGearSwag;
 
-import org.testng.annotations.Test;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;

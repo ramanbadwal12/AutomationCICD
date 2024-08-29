@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-28T12:31:11 IST" name="Suite" finished-at="2024-08-28T12:33:27 IST" duration-ms="136771">
+  <suite started-at="2024-08-29T13:12:02 IST" name="Default suite" finished-at="2024-08-29T13:14:13 IST" duration-ms="131250">
     <groups>
     </groups>
-    <test started-at="2024-08-28T12:31:11 IST" name="SubMit Order Test" finished-at="2024-08-28T12:33:27 IST" duration-ms="136771">
+    <test started-at="2024-08-29T13:12:02 IST" name="Default test" finished-at="2024-08-29T13:14:13 IST" duration-ms="131250">
       <class name="SGS.SportsGearSwag.SubmitOrderTest">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@4f0f2942]" started-at="2024-08-28T12:31:11 IST" name="LaunchApplication" finished-at="2024-08-28T12:31:24 IST" duration-ms="13737" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2024-08-29T13:12:02 IST" name="LaunchApplication" finished-at="2024-08-29T13:12:15 IST" duration-ms="12518" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@4f0f2942]" started-at="2024-08-28T12:31:24 IST" name="submitOrder" finished-at="2024-08-28T12:33:27 IST" duration-ms="123021" status="PASS">
+        <test-method signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2024-08-29T13:12:15 IST" name="submitOrder" finished-at="2024-08-29T13:14:13 IST" duration-ms="118716" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
       </class> <!-- SGS.SportsGearSwag.SubmitOrderTest -->
-    </test> <!-- SubMit Order Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

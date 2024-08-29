@@ -18,6 +18,7 @@ import SGS.SportsGearSwag.pageobjects.AdditionalAccessories;
 import SGS.SportsGearSwag.pageobjects.ArtWork;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
+import SGS.SportsGearSwag.pageobjects.ShippingDates;
 import SGS.SportsGearSwag.pageobjects.VerifySummary;
 import SGS.TestComponent.BaseTest;
 import SGS.TestComponent.Retry;
@@ -29,8 +30,7 @@ import SGS.TestComponent.Retry;
 	{		
 		
 		
-//		#Login into Application
-		
+//			#Login into Application
 		    landingPage.accountClick();
 		    landingPage.loginApplication("rammybadwal@gmail.com", "123456"); 
 		    String UserStatus = driver.findElement(By.cssSelector(".heading")).getText();
@@ -39,10 +39,7 @@ import SGS.TestComponent.Retry;
 			System.out.println("User Login into application sucessfully");
 		    landingPage.homePage();
 		    
-		
-
 //		#Find Product
-		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)");
 		Thread.sleep(1000);
@@ -55,7 +52,6 @@ import SGS.TestComponent.Retry;
 		
 	
 //		#Customize your design
-		
 		productCatalouge.chooseStyle();
 		Thread.sleep(1000); js.executeScript("window.scrollBy(0,600)");
 		Thread.sleep(1000);
@@ -71,22 +67,12 @@ import SGS.TestComponent.Retry;
 		Thread.sleep(3000);
 		js.executeScript("window.scrollBy(0,800)");
 		Thread.sleep(1000);
-		productCatalouge.AddRoaster();
-		Thread.sleep(2000);
-
+		productCatalouge.AddRoaster(); Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,2600)");	
 		
-		
-		
-//		#VerifyBreakdown 
-		
-		js.executeScript("window.scrollBy(0,2600)");		
-		
-		String Amount = driver.findElement(By.xpath("//span[@id='add_to_cart_total_amount']")).getText();
-		System.out.println("Final Total Amount: "  +  Amount);	
-		String JerseyDetils = driver.findElement(By.xpath("//div[@id='add_to_cart_breakdown_heading']")).getText();
-		System.out.println("------ Breakdown  " + JerseyDetils + "  ------ Review deatils");
-		productCatalouge.checkoutAmt();
-		Thread.sleep(1000);
+//		#verify the total amounts
+		VerifySummary VerifyTotalAmounts = new VerifySummary(driver);
+		VerifyTotalAmounts.summaryCalacualtions(); Thread.sleep(1000);
 		
 		File source =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(source, new File("/Users/rammy/Downloads/BeforeCart.png"));
@@ -95,7 +81,6 @@ import SGS.TestComponent.Retry;
 		
 		
 //		#Verifying the cart
-		
 		Thread.sleep(2000);
 		productCatalouge.AddToCart();
 		Thread.sleep(2000);
@@ -106,13 +91,11 @@ import SGS.TestComponent.Retry;
 		
 		
 //		#Take screenshot of cart
-		
 		File Cart =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(Cart, new File("/Users/rammy/Downloads/Cart.png"));
 		System.out.println("Cart Page is Captured");
 		
 //		#Edit cart page:
-		
 		EditCartDeatils EditCartdetail = new EditCartDeatils(driver);
 		EditCartdetail.EditCart();
 		Thread.sleep(2000);
@@ -120,7 +103,6 @@ import SGS.TestComponent.Retry;
 		System.out.println("All the customizations are done");
 		
 //		#Add Accessories
-		
 		AdditionalAccessories ExtraAccessories = new AdditionalAccessories(driver);
 		ExtraAccessories.Accessories();
 		
@@ -128,10 +110,15 @@ import SGS.TestComponent.Retry;
 		ArtWork CustomArtworkDesign = new ArtWork(driver);
 		CustomArtworkDesign.ArtWorkDesign();
 		Thread.sleep(6000);
-		js.executeScript("window.scrollBy(0,2400)");
+		js.executeScript("window.scrollBy(0,2100)");
 		
-		VerifySummary VerifyTotalAmounts = new VerifySummary(driver);
-		VerifyTotalAmounts.summaryCalacualtions();
+		
+//		#Verify total amount again after customization
+		ShippingDates discountShipping = new ShippingDates(driver);
+		discountShipping.Shippingdiscount();
+		
+		Thread.sleep(2000); js.executeScript("window.scrollBy(0,400)");
+
 
 //		#Update the Cart With new Changes
 		Thread.sleep(4000);
@@ -142,10 +129,7 @@ import SGS.TestComponent.Retry;
 		System.out.println("customizations are done and landed on cartpage");
 		
 		
-
-		
 //		#Close the browser
-		
 		AbstractComponent abstractComponent = new AbstractComponent(driver);
 		abstractComponent.closeBrowser();
 

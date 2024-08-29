@@ -23,10 +23,15 @@ public class VerifySummary {
 		
 //		#Get the total amount
 		String Amount1 = driver.findElement(By.xpath("//span[@id='add_to_cart_total_amount']")).getText();
+		System.out.println("Final Total Amount: "  +  Amount1);
+		
+		String JerseyDetils = driver.findElement(By.xpath("//div[@id='add_to_cart_breakdown_heading']")).getText();
+		System.out.println("------ Breakdown  " + JerseyDetils + "  ------ Review deatils");
 		
 //		Print the table value
 		List<WebElement> TableValues = driver.findElements(By.xpath("//div[@id='add_to_cart_breakdown_details']//table/tbody/tr"));
 		for(int i=0; i<TableValues.size(); i++) {
+			System.out.println(TableValues.get(i).getText());
 		}
 		
 //		# XPath with shipping fee
@@ -53,11 +58,14 @@ public class VerifySummary {
 
 		//Multiply the sum by quantity if needed
 		 sum = sum * 5;
+//		 System.out.println("Amount after multiple the quantity: " + sum);
+
 		 
 		// Assert that the calculated sum matches the expected amount
 		try {
 			 assertEquals(Float.parseFloat(Amount1.replace("$", "").replace("Discount", "").trim()), sum);
-		    System.out.println("Assertion matched again after make more customizations");
+			 System.out.println("Assertion matched for Total Amount");
+//		    System.out.println("Assertion matched again after make more customizations");
 		} catch (NumberFormatException e) {
 			
 		}
