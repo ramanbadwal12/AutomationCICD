@@ -60,7 +60,5 @@ public class ArtWork {
 	
 	public void UpdateCartButton() {
 		UpdateCart.click();
-		
-	}
-	
+	}	
 }

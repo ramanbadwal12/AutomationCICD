@@ -1,6 +1,9 @@
 package SGS.SportsGearSwag.pageobjects;
 
 
+
+
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,16 +11,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SGS.AbstractComponents.AbstractComponent;
 
 public class ProuctCatalouge extends AbstractComponent {
 
 	WebDriver driver;
+    WebDriverWait wait;
+
 	public  ProuctCatalouge(WebDriver driver)
 	{
 		super(driver);
 		this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10-second explicit wait
+
 		PageFactory.initElements(driver, this);
 
 	}
@@ -52,9 +61,6 @@ public class ProuctCatalouge extends AbstractComponent {
 	@FindBy(xpath= "//span[@aria-label='shopping-cart']")
 	WebElement addCart;
 	
-	
-
-
 	public void clickOnProduct() throws InterruptedException {
 
 
@@ -71,55 +77,53 @@ public class ProuctCatalouge extends AbstractComponent {
 		prod.findElement(By.xpath("//div[text()='Custom 3-Pointer Stars Adult Youth Unisex Basketball Jersey - Reversible Uniform']")).click();
 		System.out.println("Product is selected and redirecting to Editorpage");
 		Thread.sleep(2000);
-
-	}
-
+		
+    }
+	
 	public void chooseStyle() throws InterruptedException {
 		
-		Thread.sleep(1000);
-		selectStyle.click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectStyle)).click();
 		System.out.println("Style is selected");
 		
 	}
+	
 	public void chooseApparel() throws InterruptedException {
 		
-		Thread.sleep(1000);
-		selectApparel.click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectApparel)).click();
 		System.out.println("Apparel is selected");
 	}
+	
 	public void choosePrint() {
-		selectPrint.click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectPrint)).click();
 		System.out.println("Print is selected");
 	}
+	
 	public void chooseFrabric() throws InterruptedException {
-		selectFrabric.click();
-		Thread.sleep(1000);
-		selectFrabric2.click();
+		 wait.until(ExpectedConditions.elementToBeClickable(selectFrabric)).click();
+	        wait.until(ExpectedConditions.elementToBeClickable(selectFrabric2)).click();
 		System.out.println("Fabric is selected");
 	}
+	
 	public void chooseNeckline() {
-		selectNeckline.click();
+        wait.until(ExpectedConditions.elementToBeClickable(selectNeckline)).click();
 		System.out.println("Neckline is selected");
 	}
+	
 	public void chooseSize(String size1) throws InterruptedException {
 		selectSize1.sendKeys(size1);
 		Thread.sleep(1000);
-		
-		
 	}
-	
-	
 	
 	public void AddRoaster() throws InterruptedException {
 		
-		ClickRoaster.click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ClickRoaster)).click();
 		UploadRoaster.sendKeys("/Users/rammy/Downloads/Roster.xlsx");
 		System.out.println("Roaster sheet is uploaded");
 	}
 
 	public void AddToCart() {
-		addCart.click();
-	}
+		wait.until(ExpectedConditions.elementToBeClickable(addCart)).click();
+        System.out.println("Added to cart");	}
 
 }
+

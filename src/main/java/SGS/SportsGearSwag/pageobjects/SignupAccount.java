@@ -66,9 +66,7 @@ public class SignupAccount {
 	
 	public String SingupEmptyValidation() {
 		
-		
 		return PageConfirm.getText();
-		
 	}
 	
 	public String EmptyDataValidate() {

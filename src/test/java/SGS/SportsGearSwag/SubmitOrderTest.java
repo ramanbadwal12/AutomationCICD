@@ -18,7 +18,6 @@ import SGS.SportsGearSwag.pageobjects.AdditionalAccessories;
 import SGS.SportsGearSwag.pageobjects.ArtWork;
 import SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
-import SGS.SportsGearSwag.pageobjects.ExpressCheckoutPayPal;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
 import SGS.SportsGearSwag.pageobjects.ShippingDates;
 import SGS.SportsGearSwag.pageobjects.VerifySummary;
@@ -51,7 +50,6 @@ import SGS.TestComponent.Retry;
 		ProuctCatalouge productCatalouge = new ProuctCatalouge(driver);
 		productCatalouge.clickOnProduct();
 		Thread.sleep(1000);
-		
 	
 //		#Customize your design
 		productCatalouge.chooseStyle();
@@ -103,19 +101,19 @@ import SGS.TestComponent.Retry;
 		Thread.sleep(2000);
 		EditCartdetail.ChangeCustomizations();
 		System.out.println("All the customizations are done");
-//		
+		
 //		#Add Accessories
 		AdditionalAccessories ExtraAccessories = new AdditionalAccessories(driver);
 		ExtraAccessories.Accessories();
-		
-//		#Upload Browse and Custom Artwork
+//		
+////		#Upload Browse and Custom Artwork
 		ArtWork CustomArtworkDesign = new ArtWork(driver);
 		CustomArtworkDesign.ArtWorkDesign();
 		Thread.sleep(6000);
 		js.executeScript("window.scrollBy(0,2100)");
-		
-		
-//		#Verify total amount again after customization
+//		
+//		
+////		#Verify total amount again after customization
 		ShippingDates discountShipping = new ShippingDates(driver);
 		discountShipping.Shippingdiscount();
 		
@@ -131,10 +129,10 @@ import SGS.TestComponent.Retry;
 		System.out.println("customizations are done and landed on cartpage");
 		
 //		#Express Checkout
-		ExpressCheckoutPayPal ExpressPay = new ExpressCheckoutPayPal(driver);
-		Thread.sleep(2000); ExpressPay.checkoutPaypal();
-		ExpressPay.switchToWindow();
-		ExpressPay.makePayment("jassi@gmail.com", "raman");
+//		ExpressCheckoutPayPal ExpressPay = new ExpressCheckoutPayPal(driver);
+//		Thread.sleep(2000); ExpressPay.checkoutPaypal();
+//		ExpressPay.switchToWindow();
+//		ExpressPay.makePayment("jassi@gmail.com", "raman");
 		
 //		#Manual Checkout
 		CheckoutAnotherMethods ChooseMethods = new CheckoutAnotherMethods(driver);

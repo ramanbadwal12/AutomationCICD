@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-29T17:08:12 IST" name="Default suite" finished-at="2024-08-29T17:09:44 IST" duration-ms="91893">
+  <suite started-at="2024-09-03T16:02:51 IST" name="Default suite" finished-at="2024-09-03T16:03:06 IST" duration-ms="15574">
     <groups>
     </groups>
-    <test started-at="2024-08-29T17:08:12 IST" name="Default test" finished-at="2024-08-29T17:09:44 IST" duration-ms="91893">
-      <class name="SGS.SportsGearSwag.SubmitOrderTest">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2024-08-29T17:08:12 IST" name="LaunchApplication" finished-at="2024-08-29T17:08:21 IST" duration-ms="8744" status="PASS">
+    <test started-at="2024-09-03T16:02:51 IST" name="Default test" finished-at="2024-09-03T16:03:06 IST" duration-ms="15574">
+      <class name="SGS.SportsGearSwag.BrokenLinksVerification">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.BrokenLinksVerification@42a48628]" started-at="2024-09-03T16:02:51 IST" name="LaunchApplication" finished-at="2024-09-03T16:03:03 IST" duration-ms="11794" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2024-08-29T17:08:21 IST" name="submitOrder" finished-at="2024-08-29T17:09:44 IST" duration-ms="83134" status="PASS">
+        <test-method signature="HeaderLinks()[pri:0, instance:SGS.SportsGearSwag.BrokenLinksVerification@42a48628]" started-at="2024-09-03T16:03:03 IST" name="HeaderLinks" finished-at="2024-09-03T16:03:06 IST" duration-ms="3764" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitOrder -->
-      </class> <!-- SGS.SportsGearSwag.SubmitOrderTest -->
+        </test-method> <!-- HeaderLinks -->
+      </class> <!-- SGS.SportsGearSwag.BrokenLinksVerification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

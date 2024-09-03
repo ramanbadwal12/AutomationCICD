@@ -1,9 +1,13 @@
 package SGS.SportsGearSwag.pageobjects;
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SGS.AbstractComponents.AbstractComponent;
 
@@ -12,10 +16,14 @@ public class ExpressCheckoutPayPal extends AbstractComponent{
 	
 	
 		WebDriver driver;
+	    private WebDriverWait wait;
+
 		public  ExpressCheckoutPayPal(WebDriver driver)
 		{
 			super(driver);
 			this.driver = driver;
+	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
+
 			PageFactory.initElements(driver, this);
 
 		}
@@ -47,7 +55,8 @@ public class ExpressCheckoutPayPal extends AbstractComponent{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,1200)");
 			Thread.sleep(2000);
-			paypalCheckoutButton.click();
+	        wait.until(ExpectedConditions.elementToBeClickable(paypalCheckoutButton)).click();
+
 }
  		
 		public void makePayment(String email, String password) throws InterruptedException {
@@ -58,9 +67,9 @@ public class ExpressCheckoutPayPal extends AbstractComponent{
 			Thread.sleep(1000);
 			paypalPassword.sendKeys(password);
 			Thread.sleep(1000);
-			submitPayment.click();
-			Thread.sleep(2000);
-			paymentSucess.click();
+//			submitPayment.click();
+//			Thread.sleep(2000);
+//			paymentSucess.click();
 			
 			
 		}

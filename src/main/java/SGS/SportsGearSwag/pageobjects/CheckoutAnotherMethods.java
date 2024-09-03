@@ -65,7 +65,7 @@ public class CheckoutAnotherMethods {
 	public void checkoutAnotherMethods(String Firstname, String Lastname, String Address, String Phonenumber, String Shippingemail) throws InterruptedException {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,700)");
 		Thread.sleep(1000);
 		UserFirstName.sendKeys(Firstname);
 		userLastName.sendKeys(Lastname);

@@ -1,22 +1,29 @@
 package SGS.SportsGearSwag.pageobjects;
 
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
 public class EditCartDeatils {
 	
 	WebDriver driver;
+    private WebDriverWait wait;
+
 	public  EditCartDeatils(WebDriver driver)
 	{
 		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
 
 	}
 	
@@ -36,7 +43,7 @@ public class EditCartDeatils {
 	WebElement ChoosePockets;
 	
 	public void EditCart() {
-		EditCartButton.click();	
+        wait.until(ExpectedConditions.elementToBeClickable(EditCartButton)).click();
 	}
 	
 	public void ChangeCustomizations() throws InterruptedException {
@@ -62,8 +69,6 @@ public class EditCartDeatils {
 		Thread.sleep(2000);
 		
 	}
-	
-
 }
 
 
