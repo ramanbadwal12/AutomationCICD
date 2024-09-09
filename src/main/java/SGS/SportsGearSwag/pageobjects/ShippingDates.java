@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class ShippingDates {
-	
+
 	WebDriver driver;
 	public  ShippingDates(WebDriver driver)
 	{
@@ -16,9 +16,9 @@ public class ShippingDates {
 		PageFactory.initElements(driver, this);
 
 	}
-	
+
 	public void Shippingdiscount() throws InterruptedException {
-		
+
 		// Get the total amount before choosing the discounted delivery date
 		String amount1String = driver.findElement(By.xpath("//span[@id='add_to_cart_total_amount']")).getText();
 		System.out.println("Total amount before choosing the discounted delivery date: " + amount1String);
@@ -27,7 +27,7 @@ public class ShippingDates {
 		float discount = originalAmount * 0.05f;
 		float discountedAmount = originalAmount - discount;
 		String finalAmount = String.format("%.2f", discountedAmount);
-		
+
 		// Discount amount
 		String val = driver.findElement(By.xpath("//td[@class='ant-table-cell breakdown-cell text-right breakdown-free-cost']")).getText();
 		System.out.println("Additional value retrieved: " + val);
@@ -41,26 +41,26 @@ public class ShippingDates {
 
 		float sum = 0;
 		for (int i = 0; i < values.size(); i++) {
-		    String textValue = values.get(i).getText().trim();
-		    
-		    if (textValue.equalsIgnoreCase("FREE")) {
-		        sum += 0;
-		    } else {
-		        try {
-		            sum += Float.parseFloat(textValue.replace("$", "").replace("Discount", "").trim());
-		        } catch (NumberFormatException e) {
-		            System.out.println("Error parsing value: " + textValue);
-		        }
-		    }
+			String textValue = values.get(i).getText().trim();
+
+			if (textValue.equalsIgnoreCase("FREE")) {
+				sum += 0;
+			} else {
+				try {
+					sum += Float.parseFloat(textValue.replace("$", "").replace("Discount", "").trim());
+				} catch (NumberFormatException e) {
+					System.out.println("Error parsing value: " + textValue);
+				}
+			}
 		}
 
 		try {
-		    assertEquals(discountedAmount, sum, 0.01); // Use a small delta (0.01) for comparison due to floating-point precision
-		    System.out.println("Assertion matched for Total Amount after discount");
+			assertEquals(discountedAmount, sum, 0.01); // Use a small delta (0.01) for comparison due to floating-point precision
+			System.out.println("Assertion matched for Total Amount after discount");
 		} catch (AssertionError e) {
-		    System.out.println("Assertion failed for Total Amount after discount. Expected: " + discountedAmount + ", but found: " + sum);
+			System.out.println("Assertion failed for Total Amount after discount. Expected: " + discountedAmount + ", but found: " + sum);
 		} catch (NumberFormatException e) {
-		    System.out.println("Error parsing Amount1: " + amount1String);
+			System.out.println("Error parsing Amount1: " + amount1String);
 		}
 
 		// Simulate a delay before checking another value
@@ -69,6 +69,6 @@ public class ShippingDates {
 	}
 
 	private void assertEquals(float discountedAmount, float sum, double d) {
-	// TODO Auto-generated method stub
-	
-}}
+		// TODO Auto-generated method stub
+
+	}}

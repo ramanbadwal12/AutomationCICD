@@ -14,40 +14,40 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class EditCartDeatils {
-	
+
 	WebDriver driver;
-    private WebDriverWait wait;
+	private WebDriverWait wait;
 
 	public  EditCartDeatils(WebDriver driver)
 	{
-		
+
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
 
 	}
-	
-		@FindBy(xpath= "//i[@class='fa fa-edit']")
+
+	@FindBy(xpath= "//i[@class='fa fa-edit']")
 	WebElement EditCartButton;
-		
+
 	@FindBy(xpath= "//div[@class='sc-gIRixj beiVbL'][text()='Uniform']")
 	WebElement ChooseUniform;
-	
+
 	@FindBy(xpath= "//div[contains(text(),'PRO-Air')]")
 	WebElement ChooseFabric;
-	
+
 	@FindBy(xpath= "//div[normalize-space()='Y Shape']")
 	WebElement ChooseNeckline;
-	
+
 	@FindBy(xpath= "//div[contains(text(),'Zip Pockets')]")
 	WebElement ChoosePockets;
-	
+
 	public void EditCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(EditCartButton)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(EditCartButton)).click();
 	}
-	
+
 	public void ChangeCustomizations() throws InterruptedException {
-		
+
 		System.out.println("Landing on Editor Page Again");
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -67,7 +67,7 @@ public class EditCartDeatils {
 		ChoosePockets.click();
 		System.out.println("Pockets are Selcted");
 		Thread.sleep(2000);
-		
+
 	}
 }
 

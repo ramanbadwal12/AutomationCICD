@@ -32,7 +32,7 @@ public class LandingPage extends AbstractComponent {
 
 	@FindBy(xpath= "//button[normalize-space()='Sign In']")
 	WebElement submit;
-	
+
 	@FindBy(xpath= "//div[@class='alert alert-danger']")
 	WebElement getErrorMessage;
 
@@ -45,6 +45,8 @@ public class LandingPage extends AbstractComponent {
 	public void goTo() 
 	{
 		driver.get("https://sportsgearswag.com/");
+		//		driver.get("https://dev1.sportsgearswag.com/");
+
 	}
 
 	public void accountClick() {
@@ -57,9 +59,9 @@ public class LandingPage extends AbstractComponent {
 		passwordEle.sendKeys(password);
 		submit.click();
 	}
-	
+
 	public String getErrorMessage() {
-		
+
 		return getErrorMessage.getText();
 	}
 
