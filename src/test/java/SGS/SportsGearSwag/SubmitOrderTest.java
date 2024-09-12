@@ -21,6 +21,7 @@ import SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
 import SGS.SportsGearSwag.pageobjects.ShippingDates;
+import SGS.SportsGearSwag.pageobjects.VerifyCartSummary;
 import SGS.SportsGearSwag.pageobjects.VerifySummary;
 import SGS.TestComponent.BaseTest;
 import SGS.TestComponent.Retry;
@@ -62,7 +63,7 @@ public class SubmitOrderTest extends BaseTest {
 		productCatalouge.chooseSize("1");
 		Thread.sleep(3000); js.executeScript("window.scrollBy(0,800)");
 		Thread.sleep(1000); productCatalouge.AddRoaster(); Thread.sleep(2000);
-		js.executeScript("window.scrollBy(0,2600)");	
+		js.executeScript("window.scrollBy(0,2000)");	
 
 		//#verify the total amounts
 		VerifySummary VerifyTotalAmounts = new VerifySummary(driver);
@@ -99,20 +100,23 @@ public class SubmitOrderTest extends BaseTest {
 		//#Upload Browse and Custom Artwork
 		ArtWork CustomArtworkDesign = new ArtWork(driver);
 		CustomArtworkDesign.ArtWorkDesign();
-		Thread.sleep(6000); js.executeScript("window.scrollBy(0,2100)");
+		Thread.sleep(6000); js.executeScript("window.scrollBy(0,1400)");
 				
 		//#Verify total amount again after customization
 		ShippingDates discountShipping = new ShippingDates(driver);
 		discountShipping.Shippingdiscount();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='shipping-price w-100']"))); 
 		js.executeScript("window.scrollBy(0,400)");
-
+		
 
 		//#Update the Cart With new Changes
+		VerifyCartSummary verifyCartSummary = new VerifyCartSummary(driver);
+		verifyCartSummary.getOverallJerseyAmount();
 		Thread.sleep(4000); CustomArtworkDesign.UpdateCartButton();
 		Thread.sleep(4000); String ExpectedTitleOnCartPage = "SHOPPING CART";
 		AssertJUnit.assertEquals(ExpectedTitleOnCartPage, cartText);
 		System.out.println("customizations are done and landed on cartpage");
+		verifyCartSummary.getCartDetails();
 
 		//		#Express Checkout
 		//		ExpressCheckoutPayPal ExpressPay = new ExpressCheckoutPayPal(driver);

@@ -21,7 +21,7 @@ public class AdditionalAccessories {
 	@FindBy(xpath="(//span[contains(text(),'Choose Your Sizes')])[3]")
 	WebElement ChoosePoloAccessories;
 
-	@FindBy(xpath="//input[@id='sizes_accessory_SHIRT-POLO_M']")
+	@FindBy(xpath="//input[@id='sizes_accessory_HOODIE_M']")
 	WebElement EnterAccessoiresSize;
 
 	@FindBy(xpath="//span[normalize-space()='Save']")
@@ -30,7 +30,7 @@ public class AdditionalAccessories {
 	@FindBy(xpath= "(//button[@class='ant-switch ant-switch-small'])[1]")
 	WebElement ClickRoaster;
 
-	@FindBy(xpath= "//input[@id='roster_1_M_teamName']")
+	@FindBy(xpath= "(//input[@id='roster_1_M_teamName'])[1]")
 	WebElement EnterRaosterValue;
 
 	@FindBy(xpath= "//div[@class='col-12 text-center']//textarea[@id='accessoriesNote']")
@@ -77,6 +77,7 @@ public class AdditionalAccessories {
 		Thread.sleep(3000);
 		ClickRoaster.click();
 		Thread.sleep(2000);
+		EnterRaosterValue.click();
 		EnterRaosterValue.sendKeys("Jassi");
 		EnterNotes.sendKeys("Make it little bold");
 		ClickSaveButton.click();

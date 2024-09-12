@@ -24,12 +24,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         <version>4.19.1</version>
     </dependency>
 
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.9.0</version>
-        <scope>test</scope>
-    </dependency>
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.7.1</version> <!-- Use the latest version available -->
+    <scope>test</scope>
+</dependency>
+
 
     <dependency>
         <groupId>io.github.bonigarcia</groupId>
