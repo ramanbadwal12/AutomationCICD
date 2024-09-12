@@ -5,10 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import SGS.TestComponent.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StandAlonetest extends BaseTest {
+public class StandAlonetest{
 	
 	public static void main(String[] args) throws InterruptedException {
 		
