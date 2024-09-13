@@ -18,13 +18,14 @@ public class ErrorValidation extends BaseTest {
 	public void LoginValidation() {
 
 		landingPage.accountClick(); landingPage.loginApplication("rammy@gmail.com", "123456");
-		AssertJUnit.assertEquals("Invalid credentials,  click Forgot Password? or email support@sportsgearswag.com for assistance.", 
+		AssertJUnit.assertEquals("Invalid credentials, please try again, click Forgot Password? or "
+				+ "email support@sportsgearswag.com for assistance.", 
 				landingPage.getErrorMessage());
 		driver.close();
 
 	}
 
-	@Test
+	@Test 
 
 	public void Singup() throws InterruptedException {
 
