@@ -20,7 +20,7 @@ public class VerifyCartSummary {
         PageFactory.initElements(driver, this);
     }
 
-    // Method to get the overall jersey amount and other details
+    // Get the overall jersey amount and other details
     public void getOverallJerseyAmount() {
         // Get overall jersey cost
         String jerseyAmount = driver.findElement(By.xpath("//div[@class='ant-col ant-col-7 desktop item_cost']")).getText();

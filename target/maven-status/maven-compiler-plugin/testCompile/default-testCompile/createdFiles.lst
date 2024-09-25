@@ -1,6 +1,6 @@
-SGS/TestComponent/Listeners.class
 SGS/SportsGearSwag/ErrorValidation.class
 SGS/TestComponent/BaseTest.class
-SGS/TestComponent/Retry.class
 SGS/SportsGearSwag/SubmitOrderTest.class
 SGS/SportsGearSwag/BrokenLinksVerification.class
+SGS/TestComponent/Listeners.class
+SGS/TestComponent/Retry.class

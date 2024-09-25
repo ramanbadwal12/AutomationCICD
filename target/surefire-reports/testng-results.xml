@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-13T12:03:30 IST" name="Suite" finished-at="2024-09-13T12:04:18 IST" duration-ms="48082">
+  <suite started-at="2024-09-25T12:09:53 IST" name="Suite" finished-at="2024-09-25T12:10:49 IST" duration-ms="56209">
     <groups>
     </groups>
-    <test started-at="2024-09-13T12:03:30 IST" name="Error Validation" finished-at="2024-09-13T12:04:18 IST" duration-ms="48082">
+    <test started-at="2024-09-25T12:09:53 IST" name="Error Validation" finished-at="2024-09-25T12:10:49 IST" duration-ms="56209">
       <class name="SGS.SportsGearSwag.ErrorValidation">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:03:30 IST" name="LaunchApplication" finished-at="2024-09-13T12:03:39 IST" duration-ms="8723" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:09:53 IST" name="LaunchApplication" finished-at="2024-09-25T12:10:08 IST" duration-ms="15331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="LoginValidation()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:03:39 IST" name="LoginValidation" finished-at="2024-09-13T12:03:43 IST" duration-ms="4841" status="PASS">
+        <test-method signature="LoginValidation()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:10:08 IST" name="LoginValidation" finished-at="2024-09-25T12:10:16 IST" duration-ms="8295" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:03:43 IST" name="LaunchApplication" finished-at="2024-09-13T12:03:51 IST" duration-ms="7407" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:10:16 IST" name="LaunchApplication" finished-at="2024-09-25T12:10:23 IST" duration-ms="6875" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="Singup()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:03:51 IST" name="Singup" finished-at="2024-09-13T12:04:04 IST" duration-ms="13431" status="PASS">
+        <test-method signature="Singup()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:10:23 IST" name="Singup" finished-at="2024-09-25T12:10:37 IST" duration-ms="13470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Singup -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:04:04 IST" name="LaunchApplication" finished-at="2024-09-13T12:04:10 IST" duration-ms="5849" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:10:37 IST" name="LaunchApplication" finished-at="2024-09-25T12:10:39 IST" duration-ms="2487" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="UserForgotPassword()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@196a42c3]" started-at="2024-09-13T12:04:10 IST" name="UserForgotPassword" finished-at="2024-09-13T12:04:18 IST" duration-ms="7809" status="PASS">
+        <test-method signature="UserForgotPassword()[pri:0, instance:SGS.SportsGearSwag.ErrorValidation@18271936]" started-at="2024-09-25T12:10:39 IST" name="UserForgotPassword" finished-at="2024-09-25T12:10:49 IST" duration-ms="9732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserForgotPassword -->
