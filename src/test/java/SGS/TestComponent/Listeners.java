@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import SGS.Resources.ExtentReporterNG;
 
@@ -66,6 +67,7 @@ public class Listeners extends BaseTest implements ITestListener{
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
+		test.log(Status.SKIP, "Test skipped: " + result.getThrowable());
 		ITestListener.super.onTestSkipped(result);
 	}
 
