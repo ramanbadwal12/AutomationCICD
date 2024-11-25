@@ -15,7 +15,7 @@ public class ErrorValidation extends BaseTest {
 
 	@Test(retryAnalyzer=Retry.class)
 
-	public void LoginValidation() {
+	public void LoginValidation() throws InterruptedException {
 
 		landingPage.accountClick(); landingPage.loginApplication("rammy@gmail.com", "123456");
 		AssertJUnit.assertEquals("Invalid credentials, please try again, click Forgot Password? or "

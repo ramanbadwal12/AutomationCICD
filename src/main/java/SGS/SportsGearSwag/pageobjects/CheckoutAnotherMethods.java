@@ -56,7 +56,7 @@ public class CheckoutAnotherMethods {
 	//	#checkout Button
 	public void CheckoutRemainMethods() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1400)");
+		js.executeScript("window.scrollBy(0,1600)");
 		Thread.sleep(2000);
 		checkoutAnother.click();
 	}
@@ -91,7 +91,7 @@ public class CheckoutAnotherMethods {
 		SelectMethod.click();
 		reCAPTHA.click();
 		Thread.sleep(20000);
-		//		SubmitOrder.click();
+//		SubmitOrder.click();
 
 	}
 }

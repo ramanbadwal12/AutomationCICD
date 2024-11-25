@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +103,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SGS.SportsGearSwag.SubmitOrderTest" class="method navigator-link" hash-for-method="submitOrder">submitOrder</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="SGS.SportsGearSwag.ErrorValidation" class="method navigator-link" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="SGS.SportsGearSwag.ErrorValidation" class="method navigator-link" hash-for-method="Singup">Singup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="SGS.SportsGearSwag.ErrorValidation" class="method navigator-link" hash-for-method="UserForgotPassword">UserForgotPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +131,28 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">SGS.SportsGearSwag.SubmitOrderTest</span>
+              <span class="class-name">SGS.SportsGearSwag.ErrorValidation</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitOrder">
-                  </a> <!-- submitOrder -->
-                  <span class="method-name">submitOrder</span>
+                  <a name="LoginValidation">
+                  </a> <!-- LoginValidation -->
+                  <span class="method-name">LoginValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Singup">
+                  </a> <!-- Singup -->
+                  <span class="method-name">Singup</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="UserForgotPassword">
+                  </a> <!-- UserForgotPassword -->
+                  <span class="method-name">UserForgotPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +160,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/j8/whq7l47s2sg32vct6jx5tz6m0000gn/T/testng-eclipse-1968109724/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/j8/whq7l47s2sg32vct6jx5tz6m0000gn/T/testng-eclipse-1587145831/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +169,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SGS.SportsGearSwag.SubmitOrderTest&quot;/&gt;
+      &lt;class name=&quot;SGS.SportsGearSwag.ErrorValidation&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -185,16 +209,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitOrder')
-data.setCell(0, 2, 'SGS.SportsGearSwag.SubmitOrderTest')
-data.setCell(0, 3, 156222);
+data.setCell(0, 1, 'Singup')
+data.setCell(0, 2, 'SGS.SportsGearSwag.ErrorValidation')
+data.setCell(0, 3, 43399);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'LoginValidation')
+data.setCell(1, 2, 'SGS.SportsGearSwag.ErrorValidation')
+data.setCell(1, 3, 34816);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'UserForgotPassword')
+data.setCell(2, 2, 'SGS.SportsGearSwag.ErrorValidation')
+data.setCell(2, 3, 7979);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -220,14 +252,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SGS.SportsGearSwag.SubmitOrderTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">SGS.SportsGearSwag.ErrorValidation</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">LaunchApplication</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">submitOrder</span>
-                <span class="method-start">5000 ms</span>
+                <span class="method-name">LoginValidation</span>
+                <span class="method-start">8028 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">LaunchApplication</span>
+                <span class="method-start">42846 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Singup</span>
+                <span class="method-start">44865 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">LaunchApplication</span>
+                <span class="method-start">88266 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">UserForgotPassword</span>
+                <span class="method-start">90503 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

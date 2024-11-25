@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SGS.SportsGearSwag.SubmitOrderTest">
+      <class name="SGS.SportsGearSwag.ErrorValidation">
         <methods>
+          <include name="Singup"/>
+          <include name="UserForgotPassword"/>
           <include name="LaunchApplication"/>
-          <include name="submitOrder"/>
         </methods>
-      </class> <!-- SGS.SportsGearSwag.SubmitOrderTest -->
+      </class> <!-- SGS.SportsGearSwag.ErrorValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,10 +1,15 @@
 package SGS.SportsGearSwag.pageobjects;
 
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import SGS.AbstractComponents.AbstractComponent;
 
@@ -53,10 +58,19 @@ public class LandingPage extends AbstractComponent {
 		aButtonClick.click();
 	}
 
-	public void loginApplication(String email, String password)
+	public void loginApplication(String email, String password) throws InterruptedException
 	{
 		userName.sendKeys(email);
 		passwordEle.sendKeys(password);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement recaptchaFrame = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@title='reCAPTCHA']")));
+        driver.switchTo().frame(recaptchaFrame);        
+        System.out.println("Please complete the reCAPTCHA manually within 30 seconds.");
+        Thread.sleep(30000); 
+
+        driver.switchTo().defaultContent();
+        @SuppressWarnings("unused")
+		WebElement signInButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Sign In']")));
 		submit.click();
 	}
 

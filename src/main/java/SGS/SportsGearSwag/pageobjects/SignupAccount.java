@@ -1,11 +1,16 @@
 package SGS.SportsGearSwag.pageobjects;
 
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignupAccount {
 
@@ -62,6 +67,17 @@ public class SignupAccount {
 		js.executeScript("window.scrollBy(0,250)");
 		Thread.sleep(1000);
 		CreateButton.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement recaptchaFrame = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@title='reCAPTCHA']")));
+        driver.switchTo().frame(recaptchaFrame);        
+        System.out.println("Please complete the reCAPTCHA manually within 30 seconds.");
+        Thread.sleep(30000); 
+
+        driver.switchTo().defaultContent();
+        @SuppressWarnings("unused")
+		WebElement createAccountButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Create Account']")));
+		CreateButton.click();
+
 	}
 
 	public String SingupEmptyValidation() {
