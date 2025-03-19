@@ -55,13 +55,17 @@ public class AccountDashBoardBroken {
 		List<String> brokenLinks = new ArrayList<>();
 		for (WebElement link : links) {
 			String url = link.getAttribute("href");
+			
 			if (url != null && !url.isEmpty()) {
+				
 				try {
 					@SuppressWarnings("deprecation")
 					HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
 					connection.setRequestMethod("HEAD");
 					connection.connect();
+					
 					int responseCode = connection.getResponseCode();
+					
 					if (responseCode >= 300) {
 						brokenLinks.add(url);
 					}

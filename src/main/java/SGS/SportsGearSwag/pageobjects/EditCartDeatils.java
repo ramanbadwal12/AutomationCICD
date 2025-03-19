@@ -30,7 +30,7 @@ public class EditCartDeatils {
 	@FindBy(xpath= "//i[@class='fa fa-edit']")
 	WebElement EditCartButton;
 
-	@FindBy(xpath= "//div[@class='sc-gIRixj beiVbL'][text()='Uniform']")
+	@FindBy(xpath= "//div[@class='sc-JAcuL rhuht'][normalize-space()='Uniform']")
 	WebElement ChooseUniform;
 
 	@FindBy(xpath= "//div[contains(text(),'PRO-Air')]")

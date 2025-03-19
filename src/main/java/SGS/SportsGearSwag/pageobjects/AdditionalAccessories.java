@@ -36,11 +36,7 @@ public class AdditionalAccessories {
 	@FindBy(xpath= "//div[@class='col-12 text-center']//textarea[@id='accessoriesNote']")
 	WebElement EnterNotes;
 
-	@FindBy(xpath="//div[contains(@class,'ant-modal sc-eggNIi JiLrb')]"
-			+ "//div[contains(@class,'ant-modal-content')]"
-			+ "//div[contains(@class,'ant-modal-body')]"
-			+ "//div//div[contains(@class,'text-center')]"
-			+ "//button[contains(@type,'button')]")
+	@FindBy(xpath="(//span[contains(text(),'Save')])[3]")
 	WebElement ClickSaveButton;
 
 
@@ -54,11 +50,7 @@ public class AdditionalAccessories {
 			+ "//input[@id='accessory-artwork-upload']")
 	WebElement UploadImage;
 
-	@FindBy(xpath= "//div[contains(@class,'ant-modal sc-hTZhsR cQSaWH')]"
-			+ "//div[contains(@class,'ant-modal-content')]"
-			+ "//div[contains(@class,'ant-modal-body')]"
-			+ "//div//div[contains(@class,'text-center')]"
-			+ "//button[contains(@type,'button')]")
+	@FindBy(xpath= "(//span[contains(text(),'Save')])[4]")
 	WebElement ClickSave;
 
 
@@ -80,6 +72,7 @@ public class AdditionalAccessories {
 		EnterRaosterValue.click();
 		EnterRaosterValue.sendKeys("Jassi");
 		EnterNotes.sendKeys("Make it little bold");
+		Thread.sleep(3000);
 		ClickSaveButton.click();
 		System.out.println("Roaster added for accessories");
 		AccessoriesArtwork.click();

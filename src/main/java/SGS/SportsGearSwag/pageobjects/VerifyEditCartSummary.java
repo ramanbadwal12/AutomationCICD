@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class VerifyCartSummary {
+public class VerifyEditCartSummary {
 
     WebDriver driver;
     private String cleanedText;
@@ -15,7 +15,7 @@ public class VerifyCartSummary {
     private String formattedDate;
     private String shippingAmount;
 
-    public VerifyCartSummary(WebDriver driver) {
+    public VerifyEditCartSummary(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -28,7 +28,7 @@ public class VerifyCartSummary {
         System.out.println("Per Jersey Amount: " + cleanedText);
 
         // Get sum of customization costs multiplied by 5
-        List<WebElement> allRows = driver.findElements(By.xpath("(//div[@class='sc-leCWtA WaKgU'])[1]//table/tbody/tr/td[2]"));
+        List<WebElement> allRows = driver.findElements(By.xpath("//div[@id='add_to_cart_breakdown_details']//table/tbody/tr/td[2]"));
 
         double sum = 0;  
         for (int i = 0; i < allRows.size(); i++) {
@@ -36,17 +36,20 @@ public class VerifyCartSummary {
                 continue;
             }
             String rowText = allRows.get(i).getText();
+            System.out.println(rowText);
             String cleanText = rowText.replace("$", "").replace(",", "").trim();
             double value = Double.parseDouble(cleanText);
             sum += value;
         }
 
         double total = sum * 5;
+        System.out.println(sum);
         formattedTotal = String.format("%.2f", total);
         System.out.println("Total sum multiplied by 5: " + formattedTotal);
 
         // Get shipping date from editor
-        String shippingDate = driver.findElement(By.xpath("//div[@class='sc-jhLFZp jwIrcu card-active']")).getText();
+        String shippingDate = driver.findElement(By.xpath("//div[@class='ant-card-body']"
+        		+ "//div[@class='ant-col ant-col-4 p-1 choose-delivery-cols '][6]")).getText();
         String[] lines = shippingDate.split("\\n|,");
         String datePart = lines[0].trim();
         String monthYearPart = lines[1].trim() + " " + lines[2].trim();

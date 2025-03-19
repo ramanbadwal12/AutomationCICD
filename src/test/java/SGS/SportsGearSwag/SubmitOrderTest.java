@@ -21,12 +21,13 @@ import SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods;
 import SGS.SportsGearSwag.pageobjects.EditCartDeatils;
 import SGS.SportsGearSwag.pageobjects.ProuctCatalouge;
 import SGS.SportsGearSwag.pageobjects.ShippingDates;
-import SGS.SportsGearSwag.pageobjects.VerifyCartSummary;
+import SGS.SportsGearSwag.pageobjects.VerifyEditCartSummary;
 import SGS.SportsGearSwag.pageobjects.VerifySummary;
 import SGS.TestComponent.BaseTest;
 import SGS.TestComponent.Retry;
 
 public class SubmitOrderTest extends BaseTest {
+	
 
 	@Test(retryAnalyzer=Retry.class)
 	public void submitOrder() throws IOException, InterruptedException
@@ -61,8 +62,8 @@ public class SubmitOrderTest extends BaseTest {
 		Thread.sleep(1000); productCatalouge.chooseFrabric();
 		productCatalouge.chooseNeckline();
 		productCatalouge.chooseSize("1");
-		Thread.sleep(3000); js.executeScript("window.scrollBy(0,800)");
-		Thread.sleep(1000); productCatalouge.AddRoaster(); Thread.sleep(2000);
+		Thread.sleep(3000); js.executeScript("window.scrollBy(0,700)");
+		Thread.sleep(2000); productCatalouge.AddRoaster(); Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,2000)");	
 
 		//#verify the total amounts
@@ -110,13 +111,13 @@ public class SubmitOrderTest extends BaseTest {
 		
 
 		//#Update the Cart With new Changes
-		VerifyCartSummary verifyCartSummary = new VerifyCartSummary(driver);
-		verifyCartSummary.getOverallJerseyAmount();
+		VerifyEditCartSummary verifyEditCartSummary = new VerifyEditCartSummary(driver);
+		verifyEditCartSummary.getOverallJerseyAmount();
 		Thread.sleep(4000); CustomArtworkDesign.UpdateCartButton();
 		Thread.sleep(4000); String ExpectedTitleOnCartPage = "SHOPPING CART";
 		AssertJUnit.assertEquals(ExpectedTitleOnCartPage, cartText);
 		System.out.println("customizations are done and landed on cartpage");
-		verifyCartSummary.getCartDetails();
+		verifyEditCartSummary.getCartDetails();
 
 		//		#Express Checkout
 		//		ExpressCheckoutPayPal ExpressPay = new ExpressCheckoutPayPal(driver);
