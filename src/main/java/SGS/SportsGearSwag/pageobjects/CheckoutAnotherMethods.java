@@ -56,7 +56,7 @@ public class CheckoutAnotherMethods {
 	//	#checkout Button
 	public void CheckoutRemainMethods() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1600)");
+		js.executeScript("window.scrollBy(0,2000)");
 		Thread.sleep(2000);
 		checkoutAnother.click();
 	}
@@ -64,9 +64,10 @@ public class CheckoutAnotherMethods {
 
 	public void checkoutAnotherMethods(String Firstname, String Lastname, String Address, String Phonenumber, String Shippingemail) throws InterruptedException {
 
+		Thread.sleep(4000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(0,600)");
+		Thread.sleep(2000);
 		UserFirstName.sendKeys(Firstname);
 		userLastName.sendKeys(Lastname);
 		phoneNumber.sendKeys(Phonenumber);
@@ -91,7 +92,7 @@ public class CheckoutAnotherMethods {
 		SelectMethod.click();
 		reCAPTHA.click();
 		Thread.sleep(20000);
-//		SubmitOrder.click();
+		SubmitOrder.click();
 
 	}
 }

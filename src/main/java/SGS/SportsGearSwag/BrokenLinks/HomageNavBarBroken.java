@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,48 +11,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OrderHistoryBroken {
+public class HomageNavBarBroken {
 
 	WebDriver driver;
 
-	public OrderHistoryBroken(WebDriver driver) {
+	public HomageNavBarBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	// Locators
-	@FindBy(xpath = "//h5[normalize-space()='My Account']")
-	WebElement myAccountLink;
+	@FindBy(css = "div[class='primarybar-nav secondarybar-nav'] div[class='container-fluid']")
+	WebElement NavBlocksSection;
 
-	@FindBy(xpath = "//input[@id='inputEmailAddress']")
-	WebElement emailField;
+	public WebElement getNavSection() {
 
-	@FindBy(xpath = "//input[@id='inputPassword']")
-	WebElement passwordField;
-
-	@FindBy(xpath = "//button[normalize-space()='Sign In']")
-	WebElement signInButton;
-
-	@FindBy(xpath="//h5[normalize-space()='Order History']")
-	WebElement OrderHistoryClick;
-
-	@FindBy(css = ".customer-orders.mb-5.mt-4")
-	WebElement OrderHistorySection;
-
-	@FindBy(tagName = "a")
-	List<WebElement> linksInSection;
-
-	// Methods
-	public void OrderHistory(String email, String password) {
-		myAccountLink.click();
-		emailField.sendKeys(email);
-		passwordField.sendKeys(password);
-		signInButton.click();
-		OrderHistoryClick.click();
+		return NavBlocksSection;
 	}
 
 	public List<WebElement> getAllLinksInAccountSection() {
-		return OrderHistorySection.findElements(By.tagName("a"));
+		return NavBlocksSection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {

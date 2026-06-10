@@ -1,11 +1,7 @@
 package SGS.SportsGearSwag.pageobjects;
 
-
-
-
 import java.time.Duration;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import SGS.AbstractComponents.AbstractComponent;
 
 public class ProuctCatalouge extends AbstractComponent {
@@ -32,19 +27,17 @@ public class ProuctCatalouge extends AbstractComponent {
 	}
 
 
-	@FindBy(xpath= "//div[contains(text(),'BA253')]")
+	@FindBy(xpath= "//div[contains(text(),'BA51')]")
 	WebElement selectStyle;
 
-	@FindBy(xpath= "//div[normalize-space()='Reversible Jersey']")
+	@FindBy(xpath= "//div[@class='sc-ibAmJv jqNZzX'][normalize-space()='Reversible Jersey']")
 	WebElement selectApparel;
 
 	@FindBy(xpath= "//div[contains(text(),'Embroidered')]")
 	WebElement selectPrint;
 
-	@FindBy(xpath= "//div[contains(text(),'Poly-Mesh')]")
+	@FindBy(xpath= "(//div[contains(text(),'Pro-Performance')])[1]")
 	WebElement selectFrabric;
-	@FindBy(xpath= "//div[contains(text(),'PRO-Wick')]")
-	WebElement selectFrabric2;
 
 	@FindBy(xpath= "//div[normalize-space()='Round Shape']")
 	WebElement selectNeckline;
@@ -60,23 +53,26 @@ public class ProuctCatalouge extends AbstractComponent {
 
 	@FindBy(xpath= "//span[@aria-label='shopping-cart']")
 	WebElement addCart;
+	
+	@FindBy(xpath= "//div[@class='inline-action']//button[@type='button']")
+	WebElement proccedToCart;
 
 	public void clickOnProduct() throws InterruptedException {
 
 
-		System.out.println("Landing on homepage"); Thread.sleep(1000);
+		System.out.println("Landing on homepage"); Thread.sleep(3000);
 
 
 		List <WebElement>products =driver.findElements(By.cssSelector(".mt-3"));
 		WebElement prod =products.stream().filter(product->
-		product.findElement(By.xpath("//div[text()='Custom 3-Pointer Stars Adult Youth Unisex Basketball Jersey - Reversible Uniform']")).getText()
+		product.findElement(By.xpath("//div[normalize-space()='Custom 3-Pointer Stars Adult Youth Unisex Basketball Jersey - Reversible Uniform']")).getText()
 		.equals("Custom 3-Pointer Stars Adult Youth Unisex Basketball Jersey - Reversible Uniform")).findFirst().orElse(null);
 
 
 
 		prod.findElement(By.xpath("//div[text()='Custom 3-Pointer Stars Adult Youth Unisex Basketball Jersey - Reversible Uniform']")).click();
 		System.out.println("Product is selected and redirecting to Editorpage");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 	}
 
@@ -100,7 +96,6 @@ public class ProuctCatalouge extends AbstractComponent {
 
 	public void chooseFrabric() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(selectFrabric)).click();
-		wait.until(ExpectedConditions.elementToBeClickable(selectFrabric2)).click();
 		System.out.println("Fabric is selected");
 	}
 
@@ -117,13 +112,20 @@ public class ProuctCatalouge extends AbstractComponent {
 	public void AddRoaster() throws InterruptedException {
 
 		wait.until(ExpectedConditions.elementToBeClickable(ClickRoaster)).click();
-		UploadRoaster.sendKeys("/Users/rammy/Downloads/Roster.xlsx");
+		UploadRoaster.sendKeys("/Users/rammy/Downloads/SGS/Roster.xlsx");
 		System.out.println("Roaster sheet is uploaded");
 	}
 
 	public void AddToCart() {
 		wait.until(ExpectedConditions.elementToBeClickable(addCart)).click();
-		System.out.println("Added to cart");	}
+		System.out.println("Added to cart");
+	}
+	
+	public void ProceedCart() {
+		wait.until(ExpectedConditions.elementToBeClickable(proccedToCart)).click();
+		System.out.println("Added to cart");
+		
+	}
 
 }
 

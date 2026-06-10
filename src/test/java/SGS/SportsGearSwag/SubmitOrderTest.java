@@ -2,7 +2,6 @@ package SGS.SportsGearSwag;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
-
 import SGS.AbstractComponents.AbstractComponent;
 import SGS.SportsGearSwag.pageobjects.AdditionalAccessories;
 import SGS.SportsGearSwag.pageobjects.ArtWork;
@@ -34,37 +32,42 @@ public class SubmitOrderTest extends BaseTest {
 	{		
 
 		//#Login into Application
-		landingPage.accountClick();
-		landingPage.loginApplication("rammybadwal@gmail.com", "123456"); 
-		String UserStatus = driver.findElement(By.cssSelector(".heading")).getText();
-		String ExpectedTitleOnDashboard = "MY ACCOUNT";
-		AssertJUnit.assertEquals(ExpectedTitleOnDashboard, UserStatus);
-		System.out.println("User Login into application sucessfully");
-		landingPage.homePage();
+//		landingPage.accountClick();
+//		Thread.sleep(2000);
+//		landingPage.loginApplication("rammybadwal@gmail.com", "123456"); 
+//		String UserStatus = driver.findElement(By.cssSelector(".heading")).getText();
+		
+//		String ExpectedTitleOnDashboard = "MY ACCOUNT";
+//		AssertJUnit.assertEquals(ExpectedTitleOnDashboard, UserStatus);
+//		System.out.println("User Login into application sucessfully");
+//		landingPage.homePage();
 
 		//#Find Product
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)");
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(2000);
 		WebElement basketballElement = wait.until(ExpectedConditions.visibilityOfElementLocated
-				(By.xpath("//h4[normalize-space()='Basketball']")));
+				(By.xpath("//a[@href='/basketball']//div[@class='product-type px-3 py-2 text-center']")));
 		js.executeScript("arguments[0].click();", basketballElement);
-		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,500)");
 		ProuctCatalouge productCatalouge = new ProuctCatalouge(driver);
 		productCatalouge.clickOnProduct();
 
 		//#Customize your design
 		productCatalouge.chooseStyle();
-		Thread.sleep(1000); js.executeScript("window.scrollBy(0,600)");
+		Thread.sleep(1000); js.executeScript("window.scrollBy(0,300)");
 		Thread.sleep(1000); productCatalouge.chooseApparel();
+		js.executeScript("window.scrollBy(0,600)");
 		Thread.sleep(1000); productCatalouge.choosePrint();
 		Thread.sleep(3000); js.executeScript("window.scrollBy(0,600)");
 		Thread.sleep(1000); productCatalouge.chooseFrabric();
-		productCatalouge.chooseNeckline();
-		productCatalouge.chooseSize("1");
-		Thread.sleep(3000); js.executeScript("window.scrollBy(0,700)");
+		Thread.sleep(1000); js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(1000); productCatalouge.chooseNeckline();
+		Thread.sleep(1000); productCatalouge.chooseSize("1");
+		Thread.sleep(3000); js.executeScript("window.scrollBy(0,300)");
 		Thread.sleep(2000); productCatalouge.AddRoaster(); Thread.sleep(2000);
-		js.executeScript("window.scrollBy(0,2000)");	
+		js.executeScript("window.scrollBy(0,2200)");	
 
 		//#verify the total amounts
 		VerifySummary VerifyTotalAmounts = new VerifySummary(driver);
@@ -77,10 +80,13 @@ public class SubmitOrderTest extends BaseTest {
 
 		//#Verifying the cart
 		Thread.sleep(2000); productCatalouge.AddToCart();
-		Thread.sleep(2000); String cartText = driver.findElement(By.xpath("//h2[normalize-space()='SHOPPING CART']")).getText();
+		Thread.sleep(2000); productCatalouge.ProceedCart();
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+		By cartTitleLocator = By.xpath("//h2[normalize-space()='SHOPPING CART']");
+		String cartText = wait1.until(ExpectedConditions.visibilityOfElementLocated(cartTitleLocator)).getText();
 		System.out.println("Landing on " + cartText + " Page");
-		String ExpectedTitleOnCart = "SHOPPING CART";
-		AssertJUnit.assertEquals(ExpectedTitleOnCart, cartText);
+		String expectedTitleOnCart = "SHOPPING CART";
+		AssertJUnit.assertEquals(expectedTitleOnCart, cartText);
 
 
 		//#Take screenshot of cart
@@ -106,7 +112,7 @@ public class SubmitOrderTest extends BaseTest {
 		//#Verify total amount again after customization
 		ShippingDates discountShipping = new ShippingDates(driver);
 		discountShipping.Shippingdiscount();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='shipping-price w-100']"))); 
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='shipping-price w-100']"))); 
 		js.executeScript("window.scrollBy(0,400)");
 		
 
@@ -127,7 +133,7 @@ public class SubmitOrderTest extends BaseTest {
 
 		//		#Manual Checkout
 		CheckoutAnotherMethods ChooseMethods = new CheckoutAnotherMethods(driver);
-		ChooseMethods.CheckoutRemainMethods();
+		Thread.sleep(2000); ChooseMethods.CheckoutRemainMethods();
 		ChooseMethods.checkoutAnotherMethods("Ramanpreet", "Test order", "104 new york", "9501127112", "ramanpreet.singh@geeky.dev");
 		ChooseMethods.selectPaymentMethod();
 

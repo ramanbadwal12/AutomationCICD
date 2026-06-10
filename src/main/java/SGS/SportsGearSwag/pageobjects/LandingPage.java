@@ -26,7 +26,7 @@ public class LandingPage extends AbstractComponent {
 	}
 
 
-	@FindBy(xpath= "//h5[normalize-space()='My Account']")
+	@FindBy(xpath= "//a[@class='text-white'][normalize-space()='My Account']")
 	WebElement aButtonClick;
 
 	@FindBy(xpath= "//input[@id='inputEmailAddress']")
@@ -42,15 +42,15 @@ public class LandingPage extends AbstractComponent {
 	WebElement getErrorMessage;
 
 
-	@FindBy(xpath= "//a[@class='navbar-brand d-flex d-xl-inline-flex d-none default-logo']//img[@alt='SGS Logo']")
+	@FindBy(xpath= "//a[@class='menu-left-side']//img[@alt='logo']")
 	WebElement homeClick;
 
 
 
 	public void goTo() 
 	{
-		driver.get("https://sportsgearswag.com/");
-		//		driver.get("https://dev1.sportsgearswag.com/");
+//		driver.get("https://sportsgearswag.com/");
+				driver.get("https://dev1.sportsgearswag.com/");
 
 	}
 

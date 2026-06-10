@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,25 +11,48 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomageNavBar {
+public class SavedDesignBroken {
 
 	WebDriver driver;
 
-	public HomageNavBar(WebDriver driver) {
+	public SavedDesignBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(css = "div[class='primarybar-nav secondarybar-nav'] div[class='container-fluid']")
-	WebElement NavBlocksSection;
+	// Locators
+	@FindBy(xpath = "//h5[normalize-space()='My Account']")
+	WebElement myAccountLink;
 
-	public WebElement getNavSection() {
+	@FindBy(xpath = "//input[@id='inputEmailAddress']")
+	WebElement emailField;
 
-		return NavBlocksSection;
+	@FindBy(xpath = "//input[@id='inputPassword']")
+	WebElement passwordField;
+
+	@FindBy(xpath = "//button[normalize-space()='Sign In']")
+	WebElement signInButton;
+
+	@FindBy(xpath="//h5[normalize-space()='Email Quote']")
+	WebElement SavedDesigClick;
+
+	@FindBy(css = ".customer-saved-designs.mb-5.mt-4")
+	WebElement SavedDesignSection;
+
+	@FindBy(tagName = "a")
+	List<WebElement> linksInSection;
+
+	// Methods
+	public void SavedDesign(String email, String password) {
+		myAccountLink.click();
+		emailField.sendKeys(email);
+		passwordField.sendKeys(password);
+		signInButton.click();
+		SavedDesigClick.click();
 	}
 
 	public List<WebElement> getAllLinksInAccountSection() {
-		return NavBlocksSection.findElements(By.tagName("a"));
+		return SavedDesignSection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {
@@ -40,14 +63,16 @@ public class HomageNavBar {
 				try {
 					@SuppressWarnings("deprecation")
 					HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+					connection.setInstanceFollowRedirects(true); 
 					connection.setRequestMethod("HEAD");
 					connection.connect();
+
 					int responseCode = connection.getResponseCode();
 					if (responseCode >= 300) {
 						brokenLinks.add(url);
 					}
 				} catch (Exception e) {
-					brokenLinks.add(url);
+					brokenLinks.add(url); 
 				}
 			}
 		}

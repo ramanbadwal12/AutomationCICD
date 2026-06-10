@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

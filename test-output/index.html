@@ -143,20 +143,9 @@
                   <a name="submitOrder">
                   </a> <!-- submitOrder -->
                   <span class="method-name">submitOrder</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //h5[normalize-space()=&apos;My Account&apos;]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.3.1&apos;, java.version: &apos;22.0.2&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
-	at SGS.SportsGearSwag.pageobjects.LandingPage.accountClick(LandingPage.java:58)
-	at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:37)
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)&quot; because &quot;prod&quot; is null
+	at SGS.SportsGearSwag.pageobjects.ProuctCatalouge.clickOnProduct(ProuctCatalouge.java:73)
+	at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:55)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -200,15 +189,15 @@ Driver info: driver.version: RemoteWebDriver
                   <a name="submitOrder">
                   </a> <!-- submitOrder -->
                   <span class="method-name">submitOrder</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (956, 760)
-  (Session info: chrome=134.0.6998.89)
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (720, 751)
+  (Session info: chrome=148.0.7778.180)
 Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.3.1&apos;, java.version: &apos;22.0.2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.5&apos;, java.version: &apos;22.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [94122d55b3874114344256ea4e252b9d, clickElement {id=f.231B1CC6673A9547A45C054CFC636163.d.87AEBA21AB499544B818206F4EE3F8BD.e.1372}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56875}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56875/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (94122d55b3874114344256ea4e252b9d)] -&gt; xpath: //div[normalize-space()=&apos;Reversible Jersey&apos;]]
-Session ID: 94122d55b3874114344256ea4e252b9d
+Command: [0abc904b89443190876ade4d97f80a14, clickElement {id=f.9E67E9C0FEA16D6A70B61E6DA75D02A5.d.1B427A6E5B40189B60501BC63D3AF74A.e.18282}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.180, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53208}, goog:processID: 72684, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53208/devtoo..., se:cdpVersion: 148.0.7778.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (0abc904b89443190876ade4d97f80a14)] -&gt; xpath: //button[normalize-space()=&apos;checkout&apos;]]
+Session ID: 0abc904b89443190876ade4d97f80a14
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -221,7 +210,12 @@ Session ID: 94122d55b3874114344256ea4e252b9d
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:59)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
+	at SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods.CheckoutRemainMethods(CheckoutAnotherMethods.java:61)
+	at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:136)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -257,7 +251,7 @@ Session ID: 94122d55b3874114344256ea4e252b9d
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/j8/whq7l47s2sg32vct6jx5tz6m0000gn/T/testng-eclipse--414515500/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/j8/whq7l47s2sg32vct6jx5tz6m0000gn/T/testng-eclipse--190423314/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -310,16 +304,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'submitOrder')
 data.setCell(0, 2, 'SGS.SportsGearSwag.SubmitOrderTest')
-data.setCell(0, 3, 44314);
+data.setCell(0, 3, 138578);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'submitOrder')
 data.setCell(1, 2, 'SGS.SportsGearSwag.SubmitOrderTest')
-data.setCell(1, 3, 546);
+data.setCell(1, 3, 7637);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 44 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -352,17 +346,17 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">submitOrder</span>
-                <span class="method-start">7933 ms</span>
+                <span class="method-start">7153 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">LaunchApplication</span>
-                <span class="method-start">52250 ms</span>
+                <span class="method-start">145750 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">submitOrder</span>
-                <span class="method-start">54393 ms</span>
+                <span class="method-start">149907 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -30,7 +30,7 @@ public class EditCartDeatils {
 	@FindBy(xpath= "//i[@class='fa fa-edit']")
 	WebElement EditCartButton;
 
-	@FindBy(xpath= "//div[@class='sc-JAcuL rhuht'][normalize-space()='Uniform']")
+	@FindBy(xpath= "//div[@class='sc-ibAmJv jqNZzX'][normalize-space()='Uniform']")
 	WebElement ChooseUniform;
 
 	@FindBy(xpath= "//div[contains(text(),'PRO-Air')]")
@@ -51,18 +51,20 @@ public class EditCartDeatils {
 		System.out.println("Landing on Editor Page Again");
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,400)");
 		Thread.sleep(1000);
 		ChooseUniform.click();
 		System.out.println("Uniform is Selected");
 		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,800)");
 		Thread.sleep(2000);
-		ChooseFabric.click();
+//		ChooseFabric.click();
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(2000);
 		ChooseNeckline.click();
 		System.out.println("Fabric and Neckline is Selected");
 		Thread.sleep(2000);
-		js.executeScript("window.scrollBy(0,400)");
+		js.executeScript("window.scrollBy(0,300)");
 		Thread.sleep(2000);
 		ChoosePockets.click();
 		System.out.println("Pockets are Selcted");

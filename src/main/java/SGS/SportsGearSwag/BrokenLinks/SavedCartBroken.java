@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,11 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AccountDashBoardBroken {
+public class SavedCartBroken {
 
 	WebDriver driver;
 
-	public AccountDashBoardBroken(WebDriver driver) {
+	public SavedCartBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -33,39 +33,39 @@ public class AccountDashBoardBroken {
 	@FindBy(xpath = "//button[normalize-space()='Sign In']")
 	WebElement signInButton;
 
-	@FindBy(css = ".customer-account.mb-5.mt-4")
-	WebElement accountSection;
+	@FindBy(xpath="//h5[normalize-space()='Email Quote']")
+	WebElement SavedCartClick;
+
+	@FindBy(css = ".customer-saved-designs.mb-5.mt-4")
+	WebElement SavedCartSection;
 
 	@FindBy(tagName = "a")
 	List<WebElement> linksInSection;
 
 	// Methods
-	public void loginToAccount(String email, String password) {
+	public void SavedCart(String email, String password) {
 		myAccountLink.click();
 		emailField.sendKeys(email);
 		passwordField.sendKeys(password);
 		signInButton.click();
+		SavedCartClick.click();
 	}
 
 	public List<WebElement> getAllLinksInAccountSection() {
-		return accountSection.findElements(By.tagName("a"));
+		return SavedCartSection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {
 		List<String> brokenLinks = new ArrayList<>();
 		for (WebElement link : links) {
 			String url = link.getAttribute("href");
-			
 			if (url != null && !url.isEmpty()) {
-				
 				try {
 					@SuppressWarnings("deprecation")
 					HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
 					connection.setRequestMethod("HEAD");
 					connection.connect();
-					
 					int responseCode = connection.getResponseCode();
-					
 					if (responseCode >= 300) {
 						brokenLinks.add(url);
 					}
@@ -77,3 +77,4 @@ public class AccountDashBoardBroken {
 		return brokenLinks;
 	}
 }
+

@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,28 +11,48 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CategoryLandingPageBroken {
+public class OrderHistoryBroken {
+
 	WebDriver driver;
 
-	public CategoryLandingPageBroken(WebDriver driver) {
+	public OrderHistoryBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "(//a[@id='navbarDropdownbasketball'])[3]")
-	WebElement ClickCategory;
+	// Locators
+	@FindBy(xpath = "//h5[normalize-space()='My Account']")
+	WebElement myAccountLink;
 
-	@FindBy(id = "landing-product-blocks")
-	WebElement landingProductBlocksSection;
+	@FindBy(xpath = "//input[@id='inputEmailAddress']")
+	WebElement emailField;
 
-	public WebElement getLandingProductBlocksSection() {
+	@FindBy(xpath = "//input[@id='inputPassword']")
+	WebElement passwordField;
 
-		ClickCategory.click();
-		return landingProductBlocksSection;
+	@FindBy(xpath = "//button[normalize-space()='Sign In']")
+	WebElement signInButton;
+
+	@FindBy(xpath="//h5[normalize-space()='Order History']")
+	WebElement OrderHistoryClick;
+
+	@FindBy(css = ".customer-orders.mb-5.mt-4")
+	WebElement OrderHistorySection;
+
+	@FindBy(tagName = "a")
+	List<WebElement> linksInSection;
+
+	// Methods
+	public void OrderHistory(String email, String password) {
+		myAccountLink.click();
+		emailField.sendKeys(email);
+		passwordField.sendKeys(password);
+		signInButton.click();
+		OrderHistoryClick.click();
 	}
 
 	public List<WebElement> getAllLinksInAccountSection() {
-		return landingProductBlocksSection.findElements(By.tagName("a"));
+		return OrderHistorySection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {

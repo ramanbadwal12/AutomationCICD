@@ -18,8 +18,8 @@ public class AdditionalAccessories {
 	}
 
 
-	@FindBy(xpath="(//span[contains(text(),'Choose Your Sizes')])[3]")
-	WebElement ChoosePoloAccessories;
+	@FindBy(xpath="(//button[.='Choose Your Sizes'])[2]")
+	WebElement ChooseAccessories;
 
 	@FindBy(xpath="//input[@id='sizes_accessory_HOODIE_M']")
 	WebElement EnterAccessoiresSize;
@@ -33,10 +33,10 @@ public class AdditionalAccessories {
 	@FindBy(xpath= "(//input[@id='roster_1_M_teamName'])[1]")
 	WebElement EnterRaosterValue;
 
-	@FindBy(xpath= "//div[@class='col-12 text-center']//textarea[@id='accessoriesNote']")
+	@FindBy(xpath= "//textarea[@id='roster_accessoriesNote_1']")
 	WebElement EnterNotes;
 
-	@FindBy(xpath="(//span[contains(text(),'Save')])[3]")
+	@FindBy(xpath="//button[contains(@class,'ant-btn-close')]")
 	WebElement ClickSaveButton;
 
 
@@ -50,7 +50,7 @@ public class AdditionalAccessories {
 			+ "//input[@id='accessory-artwork-upload']")
 	WebElement UploadImage;
 
-	@FindBy(xpath= "(//span[contains(text(),'Save')])[4]")
+	@FindBy(xpath= "(//button[normalize-space()='Save'])[3]")
 	WebElement ClickSave;
 
 
@@ -58,9 +58,9 @@ public class AdditionalAccessories {
 	public void Accessories() throws InterruptedException{
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1800)");
-		Thread.sleep(1000);
-		ChoosePoloAccessories.click();
+		js.executeScript("window.scrollBy(0,1700)");
+		Thread.sleep(2000);
+		ChooseAccessories.click();
 		System.out.println("Accessoroes is selected");
 		Thread.sleep(1000);
 		EnterAccessoiresSize.sendKeys("1");
@@ -75,6 +75,7 @@ public class AdditionalAccessories {
 		Thread.sleep(3000);
 		ClickSaveButton.click();
 		System.out.println("Roaster added for accessories");
+		Thread.sleep(2000);
 		AccessoriesArtwork.click();
 		Thread.sleep(2000);
 		UploadImage.sendKeys("/Users/rammy/Downloads/Cart.png");

@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -6,55 +6,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CategoryShopPageBroken {
+public class EmailQuoteBroken {
 
 	WebDriver driver;
-	WebDriverWait wait;
 
-
-	public CategoryShopPageBroken(WebDriver driver) {
+	public EmailQuoteBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
+	// Locators
+	@FindBy(xpath = "//h5[normalize-space()='My Account']")
+	WebElement myAccountLink;
 
-	@FindBy(xpath = "(//a[@id='navbarDropdownbasketball'])[3]")
-	WebElement ClickCategoryHome;
-	@FindBy(xpath="//h2[normalize-space()='BASKETBALL JERSEYS']")
-	WebElement ClickCategory;
-	@FindBy(css = "#all-products-list")
-	WebElement allProductsListSection;
+	@FindBy(xpath = "//input[@id='inputEmailAddress']")
+	WebElement emailField;
+
+	@FindBy(xpath = "//input[@id='inputPassword']")
+	WebElement passwordField;
+
+	@FindBy(xpath = "//button[normalize-space()='Sign In']")
+	WebElement signInButton;
+
+	@FindBy(xpath="//h5[normalize-space()='Email Quote']")
+	WebElement EmailQuoteClick;
+
+	@FindBy(css = ".customer-saved-designs.mb-5.mt-4")
+	WebElement EmailQuoteSection;
+
 	@FindBy(tagName = "a")
 	List<WebElement> linksInSection;
 
-	public WebElement getAllProductsListSection() throws InterruptedException {
-
-		ClickCategoryHome.click();
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)");
-		Thread.sleep(1000);
-		ClickCategory.click();
-		js.executeScript("window.scrollBy(0,4000)");
-		Thread.sleep(3000);
-		js.executeScript("window.scrollBy(0,2700)");
-		Thread.sleep(3000);
-		js.executeScript("window.scrollBy(0,2900)");
-		Thread.sleep(3000);
-		return allProductsListSection;
+	// Methods
+	public void EmailQuote(String email, String password) {
+		myAccountLink.click();
+		emailField.sendKeys(email);
+		passwordField.sendKeys(password);
+		signInButton.click();
+		EmailQuoteClick.click();
 	}
 
-
 	public List<WebElement> getAllLinksInAccountSection() {
-		return allProductsListSection.findElements(By.tagName("a"));
+		return EmailQuoteSection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {

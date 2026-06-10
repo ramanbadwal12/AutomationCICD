@@ -2,38 +2,38 @@
 <testng-results retried="1" ignored="1" total="3" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-19T12:05:11 IST" name="Default suite" finished-at="2025-03-19T12:06:06 IST" duration-ms="54958">
+  <suite started-at="2026-06-10T17:03:58 IST" name="Default suite" finished-at="2026-06-10T17:06:36 IST" duration-ms="157565">
     <groups>
     </groups>
-    <test started-at="2025-03-19T12:05:11 IST" name="Default test" finished-at="2025-03-19T12:06:06 IST" duration-ms="54958">
+    <test started-at="2026-06-10T17:03:58 IST" name="Default test" finished-at="2026-06-10T17:06:36 IST" duration-ms="157565">
       <class name="SGS.SportsGearSwag.SubmitOrderTest">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2025-03-19T12:05:11 IST" name="LaunchApplication" finished-at="2025-03-19T12:05:19 IST" duration-ms="7933" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2026-06-10T17:03:58 IST" name="LaunchApplication" finished-at="2026-06-10T17:04:05 IST" duration-ms="7149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method retried="true" signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2025-03-19T12:05:19 IST" name="submitOrder" finished-at="2025-03-19T12:06:03 IST" duration-ms="44314" status="SKIP">
+        <test-method retried="true" signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2026-06-10T17:04:05 IST" name="submitOrder" finished-at="2026-06-10T17:06:24 IST" duration-ms="138578" status="SKIP">
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (956, 760)
-  (Session info: chrome=134.0.6998.89)
+              <![CDATA[element click intercepted: Element is not clickable at point (720, 751)
+  (Session info: chrome=148.0.7778.180)
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '22.0.2'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [94122d55b3874114344256ea4e252b9d, clickElement {id=f.231B1CC6673A9547A45C054CFC636163.d.87AEBA21AB499544B818206F4EE3F8BD.e.1372}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56875}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56875/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (94122d55b3874114344256ea4e252b9d)] -> xpath: //div[normalize-space()='Reversible Jersey']]
-Session ID: 94122d55b3874114344256ea4e252b9d]]>
+Command: [0abc904b89443190876ade4d97f80a14, clickElement {id=f.9E67E9C0FEA16D6A70B61E6DA75D02A5.d.1B427A6E5B40189B60501BC63D3AF74A.e.18282}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.180, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53208}, goog:processID: 72684, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53208/devtoo..., se:cdpVersion: 148.0.7778.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (0abc904b89443190876ade4d97f80a14)] -> xpath: //button[normalize-space()='checkout']]
+Session ID: 0abc904b89443190876ade4d97f80a14]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (956, 760)
-  (Session info: chrome=134.0.6998.89)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (720, 751)
+  (Session info: chrome=148.0.7778.180)
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '22.0.2'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '22.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [94122d55b3874114344256ea4e252b9d, clickElement {id=f.231B1CC6673A9547A45C054CFC636163.d.87AEBA21AB499544B818206F4EE3F8BD.e.1372}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56875}, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56875/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (94122d55b3874114344256ea4e252b9d)] -> xpath: //div[normalize-space()='Reversible Jersey']]
-Session ID: 94122d55b3874114344256ea4e252b9d
+Command: [0abc904b89443190876ade4d97f80a14, clickElement {id=f.9E67E9C0FEA16D6A70B61E6DA75D02A5.d.1B427A6E5B40189B60501BC63D3AF74A.e.18282}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.180, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/j8/whq7l47s2sg...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53208}, goog:processID: 72684, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53208/devtoo..., se:cdpVersion: 148.0.7778.180, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (0abc904b89443190876ade4d97f80a14)] -> xpath: //button[normalize-space()='checkout']]
+Session ID: 0abc904b89443190876ade4d97f80a14
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -46,7 +46,12 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:59)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
+at SGS.SportsGearSwag.pageobjects.CheckoutAnotherMethods.CheckoutRemainMethods(CheckoutAnotherMethods.java:61)
+at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:136)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -79,34 +84,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2025-03-19T12:06:03 IST" name="LaunchApplication" finished-at="2025-03-19T12:06:05 IST" duration-ms="2142" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2026-06-10T17:06:24 IST" name="LaunchApplication" finished-at="2026-06-10T17:06:28 IST" duration-ms="4156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2025-03-19T12:06:05 IST" name="submitOrder" finished-at="2025-03-19T12:06:06 IST" duration-ms="546" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="submitOrder()[pri:0, instance:SGS.SportsGearSwag.SubmitOrderTest@42a48628]" started-at="2026-06-10T17:06:28 IST" name="submitOrder" finished-at="2026-06-10T17:06:36 IST" duration-ms="7637" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Unable to find element with locator By.xpath: //h5[normalize-space()='My Account']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '22.0.2'
-Driver info: driver.version: RemoteWebDriver]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)" because "prod" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //h5[normalize-space()='My Account']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.3.1', java.version: '22.0.2'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
-at SGS.SportsGearSwag.pageobjects.LandingPage.accountClick(LandingPage.java:58)
-at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:37)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.findElement(org.openqa.selenium.By)" because "prod" is null
+at SGS.SportsGearSwag.pageobjects.ProuctCatalouge.clickOnProduct(ProuctCatalouge.java:73)
+at SGS.SportsGearSwag.SubmitOrderTest.submitOrder(SubmitOrderTest.java:55)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -135,7 +125,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->

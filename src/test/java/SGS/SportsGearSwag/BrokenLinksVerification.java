@@ -5,17 +5,17 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import SGS.SportsGearSwag.pageobjects.AccountDashBoardBroken;
-import SGS.SportsGearSwag.pageobjects.AllProductsFromBannerBroken;
-import SGS.SportsGearSwag.pageobjects.CategoryLandingPageBroken;
-import SGS.SportsGearSwag.pageobjects.CategoryShopPageBroken;
-import SGS.SportsGearSwag.pageobjects.EmailQuoteBroken;
-import SGS.SportsGearSwag.pageobjects.HomageNavBar;
-import SGS.SportsGearSwag.pageobjects.HomepageHeaderBroken;
-import SGS.SportsGearSwag.pageobjects.OrderHistoryBroken;
-import SGS.SportsGearSwag.pageobjects.SavedCartBroken;
-import SGS.SportsGearSwag.pageobjects.SavedDesignBroken;
-import SGS.SportsGearSwag.pageobjects.SiteMapBroken;
+import SGS.SportsGearSwag.BrokenLinks.AccountDashBoardBroken;
+import SGS.SportsGearSwag.BrokenLinks.AllProductsFromBannerBroken;
+import SGS.SportsGearSwag.BrokenLinks.CategoryLandingPageBroken;
+import SGS.SportsGearSwag.BrokenLinks.CategoryShopPageBroken;
+import SGS.SportsGearSwag.BrokenLinks.EmailQuoteBroken;
+import SGS.SportsGearSwag.BrokenLinks.HomageNavBarBroken;
+import SGS.SportsGearSwag.BrokenLinks.HomepageHeaderBroken;
+import SGS.SportsGearSwag.BrokenLinks.OrderHistoryBroken;
+import SGS.SportsGearSwag.BrokenLinks.SavedCartBroken;
+import SGS.SportsGearSwag.BrokenLinks.SavedDesignBroken;
+import SGS.SportsGearSwag.BrokenLinks.SiteMapBroken;
 import SGS.TestComponent.BaseTest;
 
 public class BrokenLinksVerification extends BaseTest {
@@ -83,11 +83,11 @@ public class BrokenLinksVerification extends BaseTest {
 
 	@Test
 	public void HeaderNavLinks() {
-		HomageNavBar homageNavBar = new HomageNavBar(driver);
-		homageNavBar.getNavSection();
-		List<WebElement> links = homageNavBar.getAllLinksInAccountSection();
+		HomageNavBarBroken homageNavBarBroken = new HomageNavBarBroken(driver);
+		homageNavBarBroken.getNavSection();
+		List<WebElement> links = homageNavBarBroken.getAllLinksInAccountSection();
 		System.out.println("Total links found: " + links.size());
-		List<String> brokenLinks = homageNavBar.findBrokenLinks(links);
+		List<String> brokenLinks = homageNavBarBroken.findBrokenLinks(links);
 		reportBrokenLinks(brokenLinks);
 	}
 

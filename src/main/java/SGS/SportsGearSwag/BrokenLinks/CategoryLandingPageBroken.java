@@ -1,4 +1,4 @@
-package SGS.SportsGearSwag.pageobjects;
+package SGS.SportsGearSwag.BrokenLinks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,48 +11,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EmailQuoteBroken {
-
+public class CategoryLandingPageBroken {
 	WebDriver driver;
 
-	public EmailQuoteBroken(WebDriver driver) {
+	public CategoryLandingPageBroken(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	// Locators
-	@FindBy(xpath = "//h5[normalize-space()='My Account']")
-	WebElement myAccountLink;
+	@FindBy(xpath = "(//a[@id='navbarDropdownbasketball'])[3]")
+	WebElement ClickCategory;
 
-	@FindBy(xpath = "//input[@id='inputEmailAddress']")
-	WebElement emailField;
+	@FindBy(id = "landing-product-blocks")
+	WebElement landingProductBlocksSection;
 
-	@FindBy(xpath = "//input[@id='inputPassword']")
-	WebElement passwordField;
+	public WebElement getLandingProductBlocksSection() {
 
-	@FindBy(xpath = "//button[normalize-space()='Sign In']")
-	WebElement signInButton;
-
-	@FindBy(xpath="//h5[normalize-space()='Email Quote']")
-	WebElement EmailQuoteClick;
-
-	@FindBy(css = ".customer-saved-designs.mb-5.mt-4")
-	WebElement EmailQuoteSection;
-
-	@FindBy(tagName = "a")
-	List<WebElement> linksInSection;
-
-	// Methods
-	public void EmailQuote(String email, String password) {
-		myAccountLink.click();
-		emailField.sendKeys(email);
-		passwordField.sendKeys(password);
-		signInButton.click();
-		EmailQuoteClick.click();
+		ClickCategory.click();
+		return landingProductBlocksSection;
 	}
 
 	public List<WebElement> getAllLinksInAccountSection() {
-		return EmailQuoteSection.findElements(By.tagName("a"));
+		return landingProductBlocksSection.findElements(By.tagName("a"));
 	}
 
 	public List<String> findBrokenLinks(List<WebElement> links) {
@@ -77,3 +57,4 @@ public class EmailQuoteBroken {
 		return brokenLinks;
 	}
 }
+
